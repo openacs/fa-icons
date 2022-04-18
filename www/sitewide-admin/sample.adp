@@ -45,26 +45,12 @@ working with icon sets
 <a href="https://icons.getbootstrap.com/">"bootstrap-icons"</a>, and
 <a href="https://fontawesome.com/search?m=free">"fa-icons"</a>.  This means that the same
 name can be used in the markup. When switching the themes/iconset,
-different icon sets are used without the need of rewriting any markup. These icons are
-displayed here in the currently defined icon set <strong>@iconset@</strong>.
+different icon sets are used without the need of rewriting any markup.
+The current default icon set is <strong>@iconset@</strong>.
 
-    <blockquote class="mx-4">
-      arrow-down          <adp:icon name="arrow-down"><br>
-      arrow-up            <adp:icon name="arrow-up"><br>
-      checkbox-checked    <adp:icon name="checkbox-checked"><br>
-      checkbox-unchecked  <adp:icon name="checkbox-unchecked"><br>
-      edit                <adp:icon name="edit"><br>
-      eye-closed          <adp:icon name="eye-closed"><br>
-      eye-open            <adp:icon name="eye-open"><br>
-      file                <adp:icon name="file"><br>
-      form-info-sign      <adp:icon name="form-info-sign"><br>
-      radio-checked       <adp:icon name="radio-checked"><br>
-      radio-unchecked     <adp:icon name="radio-unchecked"><br>
-      reload              <adp:icon name="reload"><br>
-      text                <adp:icon name="text"><br>
-      trash               <adp:icon name="trash"><br>
-      watch               <adp:icon name="watch"><br>
-    </blockquote>
+<blockquote class="mx-4">
+  @genericHTML;noquote@
+</blockquote>
 </li>
 
 </ul>
