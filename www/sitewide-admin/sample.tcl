@@ -9,6 +9,17 @@ set resource_info [::fa_icons::resource_info]
 
 set title "Sample Font Awesome Icons"
 set context [list [list "." "Font Awesome Icons"] $title]
+
+#
+# Collect generic names
+#
+set generic {}
+foreach iconset [dict keys $::template::icon::map] {
+    lappend generic {*}[dict keys [dict get $::template::icon::map $iconset]]
+}
+#
+# Default iconset
+#
 set iconset [::template::iconset]
 
 #
@@ -18,33 +29,20 @@ set CSS_URL urn:ad:css:fa-icons
 
 template::head::add_css -href $CSS_URL
 
+
+
 append genericHTML \
     {<table class="table">} \n \
     {<tr><th scope="col">Name</th><th scope="col" >fa-icons</th>} \
     [expr {$iconset ne "fa-icons" ? "<th scope='col'>$iconset</th>" : ""}] \
     </tr>\n \
-    [join [lmap name {
-        arrow-down
-        arrow-up
-        checkbox-checked
-        checkbox-unchecked
-        edit
-        eye-closed
-        eye-open
-        file
-        form-info-sign
-        radio-checked
-        radio-unchecked
-        reload
-        text
-        trash
-        watch
-    } {
+    [join [lmap name [lsort -unique [set generic]] {
         set _ <tr>
         append _ [subst {<td scope="row">$name</td><td><adp:icon iconset="fa-icons" name="$name"></td>}]
         if {$iconset ne "fa-icons"} {
-            append _ [subst {<td><adp:icon name="$name"></td>}]
+            append _ [subst {<td><adp:icon name="$name" alt="$name"></td>}]
         }
+        #append _ [subst {<td><adp:icon iconset="classic" name="$name" alt="$name"></td>}]
         append _ </tr>
     }] \n] \
     </table>\n
