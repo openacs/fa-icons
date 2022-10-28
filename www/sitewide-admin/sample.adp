@@ -6,7 +6,7 @@
 <h3>Support for the adp:icon Tag</h3>
 <p>Font Awesome Icons can be used via adp:icons can be used on ADP pages with
     <blockquote class="mx-4">
-    <code>&lt;adp:icon name="<i>NAME</i>" title="..." style="..." class="..."&gt;</code>
+    <code>&lt;adp:icon name="<i>NAME</i>" title="..." style="..." class="..." iconset='...' invisible='...'&gt;</code>
     </blockquote>
     
 <p>The last three arguments are optional.
