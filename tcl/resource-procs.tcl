@@ -20,12 +20,12 @@ namespace eval ::fa_icons {
     # configuration file:
     #
     # ns_section ns/server/${server}/acs/fa-icons
-    #        ns_param FAIconsVersion 6.1.1
+    #        ns_param FAIconsVersion 6.2.1
     #
     set ::fa_icons::version [parameter::get \
                                         -package_id $package_id \
                                         -parameter FAIconsVersion \
-                                        -default 6.1.1]
+                                        -default 6.2.1]
 
     ad_proc ::fa_icons::resource_info {
         {-version ""}
@@ -63,7 +63,7 @@ namespace eval ::fa_icons {
             #
             # cloudflare has e.g. the following resources:
             #
-            #    https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css
+            #    https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css
             #
             # We just need the CSS file, which is on the CDN in the
             # "font" directory.
@@ -89,8 +89,8 @@ namespace eval ::fa_icons {
             extraFiles {} \
             downloadURLs https://github.com/FortAwesome/Font-Awesome/releases/download/${version}/fontawesome-free-${version}-web.zip \
             cspMap $cspMap \
-            urnMap {}
-        
+            urnMap {} \
+            versionCheckURL https://cdnjs.com/libraries/font-awesome
         return $result
     }
 
