@@ -90,7 +90,10 @@ namespace eval ::fa_icons {
             downloadURLs https://github.com/FortAwesome/Font-Awesome/releases/download/${version}/fontawesome-free-${version}-web.zip \
             cspMap $cspMap \
             urnMap {} \
-            versionCheckURL https://cdnjs.com/libraries/font-awesome
+            versionCheckURL https://cdnjs.com/libraries/font-awesome \
+            versionCheckAPI {cdn cdnjs library font-awesome count 5} \
+            installedVersion $version
+
         return $result
     }
 
