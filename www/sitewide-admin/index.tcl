@@ -5,8 +5,8 @@ ad_page_contract {
 } {
 }
 
-set version $::fa_icons::version
 set resource_info [::fa_icons::resource_info]
+set version [dict get $resource_info installedVersion]
 set download_url [ad_conn url]/download
 
 set title "[dict get $resource_info resourceName] - Sitewide Admin"

@@ -3,7 +3,7 @@ ad_page_contract {
 
     @creation-date April 04, 2022
 } {
-    {version:word,notnull ""}
+    {version:token,notnull ""}
 }
 
 ::fa_icons::download -version $version

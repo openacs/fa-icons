@@ -103,17 +103,17 @@ namespace eval ::fa_icons {
         into a directory structure similar to the CDN to support the
         installation of multiple versions.
     } {
-        #
-        # If no version is specified, use the namespaced variable.
-        #
-        if {$version eq ""} {
-            set version ${::fa_icons::version}
-        }
 
         set resource_info [resource_info -version $version]
-        ::util::resources::download \
-            -resource_info $resource_info \
-            -version_dir $version
+        
+        #
+        # If no version is specified, use the version from resouce_info
+        #
+        if {$version eq ""} {
+            set version [dict get $resource_info installedVersion]
+        }
+
+        ::util::resources::download -resource_info $resource_info
 
         set resourceDir [dict get $resource_info resourceDir]
         ns_log notice " ::fa_icons::download resourceDir $resourceDir"
