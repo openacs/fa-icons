@@ -46,7 +46,6 @@ namespace eval ::fa_icons {
         # Setup variables for access via CDN vs. local resources.
         #
         set resourceDir [acs_package_root_dir fa-icons/www/resources]
-        set resourceUrl /resources/fa-icons
         set cdnHost     cdnjs.cloudflare.com
         set cdn         //$cdnHost/
 
@@ -54,7 +53,7 @@ namespace eval ::fa_icons {
             #
             # Local version is installed
             #
-            set prefix  $resourceUrl/fontawesome-free-$version-web/css
+            set prefix  /resources/fa-icons/fontawesome-free-$version-web/css
             set cdnHost ""
             set cspMap ""
         } else {
