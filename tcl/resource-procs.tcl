@@ -90,7 +90,7 @@ namespace eval ::fa_icons {
             cspMap $cspMap \
             urnMap {} \
             versionCheckAPI {cdn cdnjs library font-awesome count 5} \
-            installedVersion $version
+            configuredVersion $version
 
         return $result
     }
@@ -109,7 +109,7 @@ namespace eval ::fa_icons {
         # If no version is specified, use the version from resouce_info
         #
         if {$version eq ""} {
-            set version [dict get $resource_info installedVersion]
+            set version [dict get $resource_info configuredVersion]
         }
 
         ::util::resources::download -resource_info $resource_info
