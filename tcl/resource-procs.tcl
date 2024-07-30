@@ -12,20 +12,21 @@ ad_library {
 }
 
 namespace eval ::fa_icons {
-
-    set package_id [apm_package_id_from_key "fa-icons"]
+    variable parameter_info
 
     #
-    # The Font Awesome Icons configuration can be tailored via the OpenACS
+    # The version configuration can be tailored via the OpenACS
     # configuration file:
     #
     # ns_section ns/server/${server}/acs/fa-icons
     #        ns_param FAIconsVersion 6.5.2
     #
-    set ::fa_icons::version [parameter::get \
-                                        -package_id $package_id \
-                                        -parameter FAIconsVersion \
-                                        -default 6.5.2]
+
+    set parameter_info {
+        package_key fa-icons
+        parameter_name FAIconsVersion
+        default_value 6.5.2
+    }
 
     ad_proc ::fa_icons::resource_info {
         {-version ""}
@@ -35,11 +36,17 @@ namespace eval ::fa_icons {
         from the local filesystem, or from CDN.
 
     } {
+        variable parameter_info
         #
-        # If no version is specified, use the namespaced variable.
+        # If no version is specified, use the configured value
         #
         if {$version eq ""} {
-            set version $::fa_icons::version
+             dict with parameter_info {
+                 set version [::parameter::get_global_value \
+                                  -package_key $package_key \
+                                  -parameter $parameter_name \
+                                  -default $default_value]
+             }
         }
 
         #
@@ -90,6 +97,7 @@ namespace eval ::fa_icons {
             cspMap $cspMap \
             urnMap {} \
             versionCheckAPI {cdn cdnjs library font-awesome count 5} \
+            parameterInfo $parameter_info \
             configuredVersion $version
 
         return $result
@@ -104,7 +112,7 @@ namespace eval ::fa_icons {
     } {
 
         set resource_info [resource_info -version $version]
-        
+
         #
         # If no version is specified, use the version from resouce_info
         #
