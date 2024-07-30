@@ -11,9 +11,9 @@
 
     <version name="0.1d8" url="http://openacs.org/repository/download/apm/fa-icons-0.1d8.apm">
         <owner url="mailto:neumann@wu-wien.ac.at">Gustaf Neumann</owner>
+        <release-date>2023-07-06</release-date>
         <description format="text/plain">Free, high-quality,
         open-source icon library with over 2,000 free icons. As of 2020, Font Awesome was used by 38% of sites that use third-party font scripts, placing Font Awesome in second place after Google Fonts.</description>
-        <release-date>2023-07-06</release-date>
         <maturity>0</maturity>
 
         <provides url="fa-icons" version="0.1d8"/>
@@ -23,7 +23,7 @@
         <callbacks>
         </callbacks>
         <parameters>
-        <!-- No version parameters -->
+          <!-- No version parameters -->
         </parameters>
 
     </version>
