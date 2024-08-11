@@ -74,12 +74,14 @@ namespace eval ::fa_icons {
             # We just need the CSS file, which is on the CDN in the
             # "font" directory.
             set prefix $cdn/ajax/libs/font-awesome/$version/css
+
             set cspMap [subst {
                 urn:ad:css:fa-icons {
                     style-src $cdnHost
                     font-src $cdnHost
                 }}]
         }
+        dict set URNs urn:ad:css:fa-icons all.min.css
 
         #
         # Return the dict with at least the required fields
@@ -95,7 +97,7 @@ namespace eval ::fa_icons {
             extraFiles {} \
             downloadURLs https://github.com/FortAwesome/Font-Awesome/releases/download/${version}/fontawesome-free-${version}-web.zip \
             cspMap $cspMap \
-            urnMap {} \
+            urnMap $URNs \
             versionCheckAPI {cdn cdnjs library font-awesome count 5} \
             parameterInfo $parameter_info \
             configuredVersion $version

@@ -9,16 +9,16 @@
     <implements-subsite-p>f</implements-subsite-p>
     <inherit-templates-p>f</inherit-templates-p>
 
-    <version name="0.1d8" url="http://openacs.org/repository/download/apm/fa-icons-0.1d8.apm">
+    <version name="0.1d9" url="http://openacs.org/repository/download/apm/fa-icons-0.1d9.apm">
         <owner url="mailto:neumann@wu-wien.ac.at">Gustaf Neumann</owner>
         <release-date>2023-07-06</release-date>
         <description format="text/plain">Free, high-quality,
         open-source icon library with over 2,000 free icons. As of 2020, Font Awesome was used by 38% of sites that use third-party font scripts, placing Font Awesome in second place after Google Fonts.</description>
         <maturity>0</maturity>
 
-        <provides url="fa-icons" version="0.1d8"/>
+        <provides url="fa-icons" version="0.1d9"/>
         <requires url="acs-templating" version="5.10.1b1"/>
-        <requires url="acs-tcl" version="5.10.1b6"/>
+        <requires url="acs-tcl" version="5.10.1b8"/>
         
         <callbacks>
         </callbacks>
