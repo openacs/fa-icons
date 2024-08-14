@@ -19,13 +19,13 @@ namespace eval ::fa_icons {
     # configuration file:
     #
     # ns_section ns/server/${server}/acs/fa-icons
-    #        ns_param FAIconsVersion 6.5.2
+    #        ns_param FAIconsVersion 6.6.0
     #
 
     set parameter_info {
         package_key fa-icons
         parameter_name FAIconsVersion
-        default_value 6.5.2
+        default_value 6.6.0
     }
 
     ad_proc ::fa_icons::resource_info {
