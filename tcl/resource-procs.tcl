@@ -73,7 +73,7 @@ namespace eval ::fa_icons {
             #
             # We just need the CSS file, which is on the CDN in the
             # "font" directory.
-            set prefix $cdn/ajax/libs/font-awesome/$version/css
+            set prefix ${cdn}ajax/libs/font-awesome/$version/css
 
             set cspMap [subst {
                 urn:ad:css:fa-icons {
